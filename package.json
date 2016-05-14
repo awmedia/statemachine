@@ -1,0 +1,26 @@
+{
+    "name": "aw-statemachine",
+    "version": "1.0.1",
+    "description": "Simple flexible and resuable state machine implementation for JS",
+    "keywords": [
+        "statemachine",
+        "state-machine",
+        "aw-statemachine",
+        "aw-state-machine"
+    ],
+    "scripts": {
+        "build": "babel source --presets babel-preset-es2015 --out-dir build",
+        "prepublish": "npm run build",
+        "test": "jest"
+    },
+    "author": "Jerry Sietsma <jerry@adworksmedia.nl>",
+    "license": "",
+    "devDependencies": {
+        "jest-cli": "^11.0.1",
+        "webpack": "^1.12.3"
+    },
+    "dependencies": {
+        "eventemitter3": "^1.2.0"
+    },
+    "main": "./source/StateMachine.js"
+}
