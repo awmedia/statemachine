@@ -65,6 +65,8 @@ class StateMachine extends EventEmitter {
         }
 
         if (!this._isTransitioning) {
+            @TODO: implement delegate onEnterState and onExitState calls
+
             this._previousState = this._currentState;
             this._currentState = newState;
             transitionPromise = transitionPromise || Promise.resolve();
