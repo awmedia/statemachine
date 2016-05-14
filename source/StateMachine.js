@@ -19,7 +19,7 @@ class StateMachine extends EventEmitter {
             actions: null,
 
             /**
-             * @cfg     object  Object with states mapped to state delegates. The states are the names and the delegate will handle to action methods
+             * @cfg     object  Object with states mapped to state delegates. The states are the names and the delegate will handle the action methods
              * @required
              */
             states: null,
@@ -57,11 +57,11 @@ class StateMachine extends EventEmitter {
      * When the state machine is in transition, the call will be ignored.
      * @param   string  The new state name
      * @param   object  Transition promise. The transition will be finished after the Promise is resolved.
-     *                  Usefull te keep the state machine locked will animating to new state
+     *                  Usefull te keep the state machine locked while animating to new state
      */
     setState(newState, transitionPromise = null) {
         if (!this._states[newState]) {
-            throw new Error('Cannot set state: "${newState}". Invalid state.');
+            throw new Error('Cannot set not existing state: "${newState}"');
         }
 
         if (!this._isTransitioning) {
@@ -130,7 +130,7 @@ class StateMachine extends EventEmitter {
      * method to call a specific action.
      * @param   string  The name of the action to call
      * @param   ...     The extra params will be pased to the action delegate
-     * @return  mixed   The return result of the action delegate or nothing
+     * @return  mixed   The return result of the action delegate or null
      */
     _callAction(action, ...args) {
         let isExistingAction = (this._actions.indexOf(action) !== -1),
