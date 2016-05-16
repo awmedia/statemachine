@@ -38,7 +38,7 @@ var StateMachine = function (_EventEmitter) {
             actions: null,
 
             /**
-             * @cfg     object  Object with states mapped to state delegates. The states are the names and the delegate will handle to action methods
+             * @cfg     object  Object with states mapped to state delegates. The states are the names and the delegate will handle the action methods
              * @required
              */
             states: null,
@@ -77,7 +77,7 @@ var StateMachine = function (_EventEmitter) {
      * When the state machine is in transition, the call will be ignored.
      * @param   string  The new state name
      * @param   object  Transition promise. The transition will be finished after the Promise is resolved.
-     *                  Usefull te keep the state machine locked will animating to new state
+     *                  Usefull te keep the state machine locked while animating to new state
      */
 
 
